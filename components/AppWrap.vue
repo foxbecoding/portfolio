@@ -1,6 +1,6 @@
 <template>
-    <div class="app_layout">
-        <div class="application__wrap">
+    <div class="app__layout">
+        <div class="app__wrap">
             <slot />
         </div>
     </div>
@@ -8,11 +8,11 @@
 </template>
 
 <style scoped>
-.app_layout {
+.app__layout {
     height: 100%;
     display: flex;
 }
-.application__wrap {
+.app__wrap {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     display: flex;
