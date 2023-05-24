@@ -13,6 +13,17 @@
                 </div>
             </AppFrame>
         </div>
-        <slot />
+        <main class="app-main">
+            <slot />
+        </main>
     </AppWrap>
 </template>
+
+<style scoped>
+.app-main {
+    flex: 1 0 auto;
+    max-width: 100%;
+    padding: 64px 0 0 0;
+    transition: .2s cubic-bezier(.4,0,.2,1);
+}
+</style>
