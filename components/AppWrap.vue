@@ -1,10 +1,17 @@
 <template>
-    <div class="application__wrap">
-        <slot />
+    <div class="app_layout">
+        <div class="application__wrap">
+            <slot />
+        </div>
     </div>
+    
 </template>
 
 <style scoped>
+.app_layout {
+    height: 100%;
+    display: flex;
+}
 .application__wrap {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
