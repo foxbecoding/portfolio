@@ -1,7 +1,7 @@
 <script lang="ts" setup></script>
 
 <template>
-    <div>
+    <AppWrap>
         <div class="navbar bg-base-100 px-0">
             <AppFrame>
                 <div class="flex-1">
@@ -14,5 +14,5 @@
             </AppFrame>
         </div>
         <slot />
-    </div>
+    </AppWrap>
 </template>
