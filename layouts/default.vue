@@ -5,7 +5,7 @@
         <div class="navbar bg-base-100 px-0">
             <div class="w-full mx-8">
                 <div class="flex-1">
-                    <img src="logo.png" />
+                    <Logo :width="180" />
                 </div>
                 <div class="flex-none">
                     <button class="btn bg-neutral mr-4">Contact Me</button>
