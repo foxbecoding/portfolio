@@ -1,0 +1,55 @@
+$bg-color: #212121;
+$primary-color: #212121;
+$color: #212121;
+$site-bg-color: #121212;
+
+
+
+::selection {
+    background-color: $bg-color;
+    color: $color;
+}
+
+/*** Mozilla based browsers ***/
+::-moz-selection {
+    background-color: $bg-color;
+    color: $color;
+}
+
+/***For Other Browsers ***/
+::-o-selection {
+    background-color: $bg-color;
+    color: $color;
+}
+
+::-ms-selection {
+    background-color: $bg-color;
+    color: $color;
+}
+
+/*** For Webkit ***/
+::-webkit-selection {
+    background-color: $bg-color;
+    color: $color;
+}
+
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: $primary-color $site-bg-color;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: $site-bg-color;        /* color of the tracking area */
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: $primary-color;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid $site-bg-color;  /* creates padding around scroll thumb */
+}
