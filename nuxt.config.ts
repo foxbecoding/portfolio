@@ -7,7 +7,8 @@ export default defineNuxtConfig({
     },
     css: [
         '@mdi/font/css/materialdesignicons.min.css',
-        '@fortawesome/fontawesome-free/css/all.min.css'
+        '@fortawesome/fontawesome-free/css/all.min.css',
+        'assets/styles.scss'
     ],
 
     modules: ['@nuxtjs/tailwindcss'],
