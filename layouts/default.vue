@@ -3,7 +3,7 @@
 <template>
     <div>
         <div class="navbar bg-base-100 px-0">
-            <div class="w-full mx-8">
+            <AppFrame>
                 <div class="flex-1">
                     <Logo :width="180" />
                 </div>
@@ -11,7 +11,7 @@
                     <button class="btn bg-neutral mr-4">Contact Me</button>
                     <button class="btn bg-neutral">My Resume</button>
                 </div>
-            </div>
+            </AppFrame>
         </div>
         <slot />
     </div>
