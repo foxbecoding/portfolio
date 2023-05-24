@@ -1,12 +1,12 @@
 <script lang="ts" setup>
 
-interface Button {
+interface NavBarAction {
     id: number
     class: string
     label: string
 }
 
-const navActions = ref<Button[]>([
+const navBarActions = ref<NavBarAction[]>([
     {id: 1, class: 'btn bg-neutral mr-4', label: 'Contact Me'},    
     {id: 2, class: 'btn bg-neutral', label: 'My Resume'}    
 ])
@@ -21,11 +21,11 @@ const navActions = ref<Button[]>([
             </div>
             <div class="flex-none">
                 <button 
-                    v-for="(btn, i) in navActions" 
+                    v-for="(nba, i) in navBarActions" 
                     :key="i" 
-                    :class="btn.class"
+                    :class="nba.class"
                 >
-                    {{ btn.label }}
+                    {{ nba.label }}
                 </button>
             </div>
         </AppFrame>
