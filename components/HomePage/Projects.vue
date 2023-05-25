@@ -1,22 +1,25 @@
 <script lang="ts" setup>
-import { mdiGithub } from '@mdi/js'
+import { mdiGithub, mdiCheck } from '@mdi/js'
 
 interface Project {
     id: number
     title: string
-    techStack: string
+    techStack: string[]
     image: { src: string, alt: string }
     liveSiteLink: string
     githubLink: string
 }
 
-const iconPath = ref<string>(mdiGithub)
+const iconPath = reactive({
+    github: mdiGithub,
+    check: mdiCheck
+})
 
 const projects = ref<Project[]>([
     { 
         id: 1,
         title: 'Portfolio Site',  
-        techStack: 'Nuxt3+TailWind CSS+DaisyUI+TypeScript',
+        techStack: ['Nuxt3', 'TailWind CSS', 'DaisyUI', 'TypeScript'],
         image: { src: '/images/foxbecoding-sq.png', alt: 'FoxBeCoding' },
         liveSiteLink: 'https://foxbecoding.com',
         githubLink: 'https://github.com/foxbecoding/portfolio'
@@ -25,7 +28,7 @@ const projects = ref<Project[]>([
     { 
         id: 2,
         title: 'EasyBeatz',  
-        techStack: 'Nuxt3+Vuetify+TypeScript+Python+Django Rest',
+        techStack: ['Nuxt3','Vuetify','TypeScript','Python','Django Rest'],
         image: { src: '/images/easybeatz-sq.png', alt: 'FoxBeCEasyBeatzoding' },
         liveSiteLink: 'https://easybeatz.com',
         githubLink: 'https://github.com/foxbecoding/easybeatz'
@@ -51,7 +54,15 @@ const projects = ref<Project[]>([
                     </figure>
                     <div class="card-body">
                         <h2 class="card-title">{{ project.title }}</h2>
-                        <p>Tech Stack: <br>{{ project.techStack }}</p>
+                        <p>Tech Stack:</p>
+                        <p 
+                            class="flex gap-4"
+                            v-for="(tech, t) in project.techStack" 
+                            :key="t"
+                        >
+                            <svg-icon class="relative top-1" type="mdi" :path="iconPath.check" :size="18" />
+                            <span>{{ tech }}</span>
+                        </p>
                         <div class="card-actions justify-end">
                             <a 
                                 class="btn btn-sm glass"
@@ -65,7 +76,7 @@ const projects = ref<Project[]>([
                                 target="_blank"
                                 :href="project.githubLink"
                             >
-                                <svg-icon class="mr-2" type="mdi" :path="iconPath" :size="24" />
+                                <svg-icon class="mr-2" type="mdi" :path="iconPath.github" :size="24" />
                                 Github
                             </a>
                         </div>
