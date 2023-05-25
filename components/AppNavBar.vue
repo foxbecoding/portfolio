@@ -7,14 +7,20 @@ interface NavBarAction {
     clickHandler: Function | null
 }
 
-const mailTo = () => window.location.href = 'mailto:fox@foxbecoding.com';
-
 const navBarActions = ref<NavBarAction[]>([
-    {id: 1, class: 'btn btn-sm bg-neutral', label: 'Contact', clickHandler: mailTo },    
-    {id: 2, class: 'btn btn-sm bg-neutral', label: 'Resume', clickHandler: null}    
+    {
+        id: 1, 
+        class: 'btn btn-sm bg-neutral', 
+        label: 'Contact', 
+        clickHandler: () => window.location.href = 'mailto:fox@foxbecoding.com' 
+    },    
+    {
+        id: 2, 
+        class: 'btn btn-sm bg-neutral', 
+        label: 'Resume', 
+        clickHandler: null
+    }    
 ])
-
-
 </script>
 
 <template>
