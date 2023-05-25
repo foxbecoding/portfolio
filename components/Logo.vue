@@ -8,6 +8,6 @@ const props = defineProps({
 
 <template>
     <div>
-        <img src="logo.png" :width="props.width ? props.width : 150" />
+        <img src="/logo.png" :width="props.width ? props.width : 150" />
     </div>
 </template>
