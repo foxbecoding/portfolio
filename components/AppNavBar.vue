@@ -7,7 +7,7 @@ interface NavBarAction {
 }
 
 const navBarActions = ref<NavBarAction[]>([
-    {id: 1, class: 'btn btn-sm bg-neutral glass', label: 'Contact Me'},    
+    {id: 1, class: 'btn btn-sm bg-neutral', label: 'Contact Me'},    
     {id: 2, class: 'btn btn-sm bg-neutral', label: 'My Resume'}    
 ])
 
