@@ -31,7 +31,7 @@ const projects = ref<Project[]>([
 </script>
 
 <template>  
-    <div class="py-4">
+    <div class="py-8">
         <div class="text-center">
             <h1 class="text-5xl font-bold">My Projects</h1>
         </div>
