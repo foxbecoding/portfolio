@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { mdiGithub } from '@mdi/js'
+
 interface Project {
     id: number
     title: string
@@ -7,6 +9,8 @@ interface Project {
     liveSiteLink: string
     githubLink: string
 }
+
+const iconPath = ref<string>(mdiGithub)
 
 const projects = ref<Project[]>([
     { 
@@ -60,7 +64,8 @@ const projects = ref<Project[]>([
                             target="_blank"
                             :href="project.githubLink"
                         >
-                            GitHub
+                            <svg-icon class="mr-2" type="mdi" :path="iconPath" :size="24" />
+                            Github
                         </a>
                     </div>
                 </div>
