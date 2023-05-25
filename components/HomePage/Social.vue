@@ -7,7 +7,7 @@ const iconPath = ref<string>(mdiLinkedin)
 <template>  
     <div class="py-8">
         <div class="text-center">
-            <h1 class="text-5xl font-bold">Find me on LinkedIn</h1>
+            <h1 class="text-4xl sm:text-5xl font-bold">Find me on LinkedIn</h1>
         </div>
         <div class="text-center my-4">
             <div class="avatar">
@@ -15,7 +15,7 @@ const iconPath = ref<string>(mdiLinkedin)
                     <svg-icon type="mdi" :path="iconPath" :size="98" />
                 </div>
             </div>
-            <h2 class="text-4xl font-bold"> 
+            <h2 class="text-3xl sm:text-4xl font-bold"> 
                 <span class="primary-highlight">@foxbecoding</span>
             </h2>  
         </div>
