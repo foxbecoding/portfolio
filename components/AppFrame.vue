@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full mx-8">
+    <div class="md:mx-8 mx-4">
         <slot />
     </div>
 </template>
