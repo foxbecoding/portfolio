@@ -28,10 +28,6 @@ const projects = ref<Project[]>([
     }
 ])
 
-const goToLink = (link: string): void => {
-    window.location.href = link
-}
-
 </script>
 
 <template>  
