@@ -12,7 +12,7 @@ const iconPath = ref<string>(mdiLinkedin)
         <div class="text-center my-4">
             <div class="avatar">
                 <div class="w-24 mask mask-squircle bg-neutral">
-                    <svg-icon  type="mdi" :path="iconPath" :size="98" />
+                    <svg-icon type="mdi" :path="iconPath" :size="98" />
                 </div>
             </div>
             <h2 class="text-4xl font-bold"> 
