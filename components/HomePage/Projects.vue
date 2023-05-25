@@ -62,8 +62,6 @@ const projects = ref<Project[]>([
                         >
                             GitHub
                         </a>
-                        <!-- <a class="btn btn-outline btn-sm" @click="goToLink(project.liveSiteLink)">Live Site</a>
-                        <a class="btn btn-accent btn-sm" @click="goToLink(project.githubLink)">GitHub</a> -->
                     </div>
                 </div>
             </div>
