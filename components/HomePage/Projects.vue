@@ -8,12 +8,21 @@ interface Project {
     image: { src: string, alt: string }
     liveSiteLink: string
     githubLink: string
+    modal: {
+        title: string
+        text: string
+    }
 }
 
 const iconPath = reactive({
     github: mdiGithub,
     check: mdiCheck,
     info: mdiInformationSlabCircleOutline
+})
+
+const modal = reactive({
+    title: '',
+    text: ''
 })
 
 const projects = ref<Project[]>([
@@ -23,7 +32,11 @@ const projects = ref<Project[]>([
         techStack: ['Nuxt3', 'TailWind CSS', 'DaisyUI', 'TypeScript'],
         image: { src: '/images/foxbecoding-sq.png', alt: 'FoxBeCoding' },
         liveSiteLink: 'https://foxbecoding.com',
-        githubLink: 'https://github.com/foxbecoding/portfolio'
+        githubLink: 'https://github.com/foxbecoding/portfolio',
+        modal: {
+            title: 'Porfolio Site',
+            text: `Simple portfolio website that displays my projects and skillsets.`
+        }
     },
 
     { 
@@ -32,9 +45,23 @@ const projects = ref<Project[]>([
         techStack: ['Nuxt3','Vuetify','TypeScript','Python','Django Rest'],
         image: { src: '/images/easybeatz-sq.png', alt: 'FoxBeCEasyBeatzoding' },
         liveSiteLink: 'https://easybeatz.com',
-        githubLink: 'https://github.com/foxbecoding/easybeatz'
+        githubLink: 'https://github.com/foxbecoding/easybeatz',
+        modal: {
+            title: 'EasyBeatz',
+            text:  `
+                    EasyBeatz is a freelance full stack project that I developed for their company.  
+                    The system utilizes the Stripe API that allows users to sign up, 
+                    subscribe and purchase instrumentals.  The company is able to manage their 
+                    customer base and manage their content throughout the website. 
+                   `
+        }
     }
 ])
+
+const setModalData = (data: any): void => {
+    modal.title = data.title
+    modal.text = data.text
+}
 
 </script>
 
@@ -56,9 +83,13 @@ const projects = ref<Project[]>([
                     <div class="card-body">
                         <div class="flex">
                             <h2 class="card-title flex-1">{{ project.title }}</h2>
-                            <button class="flex-none btn btn-sm btn-ghost btn-circle text-info">
+                            <label
+                                @click="setModalData(project.modal)" 
+                                class="flex-none btn btn-sm btn-ghost btn-circle text-info"
+                                for="my-modal" 
+                            >
                                 <svg-icon type="mdi" :path="iconPath.info" :size="24" />
-                            </button>
+                            </label>
                         </div>
                         <p>Tech Stack:</p>
                         <p 
@@ -90,5 +121,15 @@ const projects = ref<Project[]>([
                 </div>
             </div>
         </AppFrame>  
+        <input type="checkbox" id="my-modal" class="modal-toggle" />
+        <div class="modal">
+            <div class="modal-box">
+                <h3 class="font-bold text-lg">{{ modal.title }}</h3>
+                <p class="py-4">{{ modal.text }}</p>
+                <div class="modal-action">
+                    <label for="my-modal" class="btn bg-neutral">Close</label>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
