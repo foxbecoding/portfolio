@@ -127,7 +127,7 @@ const setModalData = (data: any): void => {
                 <h3 class="font-bold text-lg">{{ modal.title }}</h3>
                 <p class="py-4">{{ modal.text }}</p>
                 <div class="modal-action">
-                    <label for="my-modal" class="btn bg-neutral">Close</label>
+                    <label for="my-modal" class="btn btn-sm bg-neutral">Close</label>
                 </div>
             </div>
         </div>
