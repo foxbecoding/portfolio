@@ -18,7 +18,7 @@ const navBarActions = ref<NavBarAction[]>([
         id: 2, 
         class: 'btn btn-sm bg-neutral', 
         label: 'Resume', 
-        clickHandler: () => window.open('resume.pdf', '_blank')
+        clickHandler: () => window.open('/resume.pdf', '_blank')
     }    
 ])
 </script>
