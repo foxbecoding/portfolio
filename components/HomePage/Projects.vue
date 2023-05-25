@@ -53,7 +53,7 @@ const projects = ref<Project[]>([
                     <p>Tech Stack: <br>{{ project.techStack }}</p>
                     <div class="card-actions justify-end">
                         <a 
-                            class="btn btn-outline btn-sm"
+                            class="btn btn-sm glass"
                             target="_blank" 
                             :href="project.liveSiteLink"
                         >
