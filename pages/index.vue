@@ -4,5 +4,6 @@
     <div>
         <HomePageHero />
         <HomePageProjects />
+        <HomePageSocial />
     </div>
 </template>
