@@ -3,5 +3,6 @@
 <template>
     <div>
         <HomePageHero />
+        <HomePageProjects />
     </div>
 </template>
