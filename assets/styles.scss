@@ -53,3 +53,10 @@ $site-bg-color: #121212;
   border-radius: 20px;       /* roundness of the scroll thumb */
   border: 3px solid $site-bg-color;  /* creates padding around scroll thumb */
 }
+
+.primary-highlight {
+  background: repeating-linear-gradient(to right,  #9C27B0,  #FFCA28);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
