@@ -4,7 +4,7 @@ interface NavBarAction {
     id: number
     class: string
     label: string
-    clickHandler: Function | null
+    clickHandler: Function
 }
 
 const navBarActions = ref<NavBarAction[]>([
@@ -18,7 +18,7 @@ const navBarActions = ref<NavBarAction[]>([
         id: 2, 
         class: 'btn btn-sm bg-neutral', 
         label: 'Resume', 
-        clickHandler: null
+        clickHandler: () => window.location.href = 'resume.pdf'
     }    
 ])
 </script>
@@ -41,7 +41,6 @@ const navBarActions = ref<NavBarAction[]>([
                     {{ nba.label }}
                 </button>
             </AppFrame>
-            
         </div>
     </div>
 </template>
