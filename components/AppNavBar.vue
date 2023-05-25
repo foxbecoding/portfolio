@@ -7,7 +7,7 @@ interface NavBarAction {
 }
 
 const navBarActions = ref<NavBarAction[]>([
-    {id: 1, class: 'btn btn-sm bg-neutral', label: 'Contact Me'},    
+    {id: 1, class: 'btn btn-sm bg-neutral glass', label: 'Contact Me'},    
     {id: 2, class: 'btn btn-sm bg-neutral', label: 'My Resume'}    
 ])
 
@@ -19,7 +19,7 @@ const navBarActions = ref<NavBarAction[]>([
             <div class="flex-1">
                 <Logo :width="180" />
             </div>
-            <div class="flex-none space-x-4">
+            <div class="invisible sm:visible flex-none space-x-4">
                 <button 
                     v-for="(nba, i) in navBarActions" 
                     :key="i" 
