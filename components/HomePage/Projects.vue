@@ -4,6 +4,8 @@ interface Project {
     title: string
     techStack: string
     image: { src: string, alt: string }
+    liveSiteLink: string
+    githubLink: string
 }
 
 const projects = ref<Project[]>([
@@ -11,16 +13,24 @@ const projects = ref<Project[]>([
         id: 1,
         title: 'Portfolio Site',  
         techStack: 'Nuxt3+TailWind CSS+DaisyUI+TypeScript',
-        image: { src: '/images/foxbecoding-sq.png', alt: 'FoxBeCoding' }
+        image: { src: '/images/foxbecoding-sq.png', alt: 'FoxBeCoding' },
+        liveSiteLink: 'https://foxbecoding.com',
+        githubLink: 'https://github.com/foxbecoding/portfolio'
     },
 
     { 
         id: 2,
         title: 'EasyBeatz',  
         techStack: 'Nuxt3+Vuetify+TypeScript+Python+Django Rest',
-        image: { src: '/images/easybeatz-sq.png', alt: 'FoxBeCEasyBeatzoding' }
+        image: { src: '/images/easybeatz-sq.png', alt: 'FoxBeCEasyBeatzoding' },
+        liveSiteLink: 'https://easybeatz.com',
+        githubLink: 'https://github.com/foxbecoding/easybeatz'
     }
 ])
+
+const goToLink = (link: string): void => {
+    window.location.href = link
+}
 
 </script>
 
@@ -42,8 +52,22 @@ const projects = ref<Project[]>([
                     <h2 class="card-title">{{ project.title }}</h2>
                     <p>Tech Stack: <br>{{ project.techStack }}</p>
                     <div class="card-actions justify-end">
-                        <button class="btn btn-outline btn-sm">Live Site</button>
-                        <button class="btn btn-accent btn-sm">GitHub</button>
+                        <a 
+                            class="btn btn-outline btn-sm"
+                            target="_blank" 
+                            :href="project.liveSiteLink"
+                        >
+                            Live Site
+                        </a>
+                        <a 
+                            class="btn btn-accent btn-sm" 
+                            target="_blank"
+                            :href="project.githubLink"
+                        >
+                            GitHub
+                        </a>
+                        <!-- <a class="btn btn-outline btn-sm" @click="goToLink(project.liveSiteLink)">Live Site</a>
+                        <a class="btn btn-accent btn-sm" @click="goToLink(project.githubLink)">GitHub</a> -->
                     </div>
                 </div>
             </div>
