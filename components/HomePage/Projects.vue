@@ -40,7 +40,7 @@ const projects = ref<Project[]>([
 <template>  
     <div class="py-8">
         <div class="text-center">
-            <h1 class="text-5xl font-bold">My Projects</h1>
+            <h1 class="text-4xl sm:text-5xl font-bold">My Projects</h1>
         </div>
         <AppFrame>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
