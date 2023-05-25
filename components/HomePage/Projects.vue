@@ -65,7 +65,7 @@ const projects = ref<Project[]>([
                         </p>
                         <div class="card-actions justify-end">
                             <a 
-                                class="btn btn-sm glass"
+                                class="btn btn-sm btn-outline"
                                 target="_blank" 
                                 :href="project.liveSiteLink"
                             >

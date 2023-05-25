@@ -14,13 +14,13 @@ const navBarActions = ref<NavBarAction[]>([
 </script>
 
 <template>
-    <div class="navbar bg-base-100 px-0">
-        <div class="flex-1">
+    <div class="navbar bg-base-100 px-0 max-[359px]:flex max-[359px]:flex-col">
+        <div class="min-[360px]:flex-1">
             <AppFrame>
                 <Logo :width="180" />
             </AppFrame>
         </div>
-        <div class="flex-none">
+        <div class="min-[360px]:flex-none max-[359px]:mt-2">
             <AppFrame class="space-x-2 sm:space-x-4">
                 <button 
                     v-for="(nba, i) in navBarActions" 
