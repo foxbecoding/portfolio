@@ -4,12 +4,16 @@ interface NavBarAction {
     id: number
     class: string
     label: string
+    clickHandler: Function | null
 }
 
+const mailTo = () => window.location.href = 'mailto:fox@foxbecoding.com';
+
 const navBarActions = ref<NavBarAction[]>([
-    {id: 1, class: 'btn btn-sm bg-neutral', label: 'Contact'},    
-    {id: 2, class: 'btn btn-sm bg-neutral', label: 'Resume'}    
+    {id: 1, class: 'btn btn-sm bg-neutral', label: 'Contact', clickHandler: mailTo },    
+    {id: 2, class: 'btn btn-sm bg-neutral', label: 'Resume', clickHandler: null}    
 ])
+
 
 </script>
 
@@ -26,6 +30,7 @@ const navBarActions = ref<NavBarAction[]>([
                     v-for="(nba, i) in navBarActions" 
                     :key="i" 
                     :class="nba.class"
+                    @click="nba.clickHandler"
                 >
                     {{ nba.label }}
                 </button>
