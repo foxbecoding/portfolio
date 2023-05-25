@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { mdiGithub, mdiCheck } from '@mdi/js'
+import { mdiGithub, mdiCheck, mdiInformationSlabCircleOutline } from '@mdi/js'
 
 interface Project {
     id: number
@@ -12,7 +12,8 @@ interface Project {
 
 const iconPath = reactive({
     github: mdiGithub,
-    check: mdiCheck
+    check: mdiCheck,
+    info: mdiInformationSlabCircleOutline
 })
 
 const projects = ref<Project[]>([
@@ -53,7 +54,12 @@ const projects = ref<Project[]>([
                         <img :src="project.image.src" :alt="project.image.alt" />
                     </figure>
                     <div class="card-body">
-                        <h2 class="card-title">{{ project.title }}</h2>
+                        <div class="flex">
+                            <h2 class="card-title flex-1">{{ project.title }}</h2>
+                            <button class="flex-none btn btn-sm btn-ghost btn-circle text-info">
+                                <svg-icon type="mdi" :path="iconPath.info" :size="24" />
+                            </button>
+                        </div>
                         <p>Tech Stack:</p>
                         <p 
                             class="flex gap-4"
