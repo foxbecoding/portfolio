@@ -44,7 +44,7 @@ const projects = ref<Project[]>([
     { 
         id: 2,
         title: 'EasyBeatz',  
-        techStack: ['Nuxt3','Vuetify','TypeScript','Python','Django Rest'],
+        techStack: ['Nuxt3','Vuetify','TypeScript','Python','Django Rest', 'Stripe API'],
         image: { src: '/images/easybeatz-sq.png', alt: 'FoxBeCEasyBeatzoding' },
         liveSiteLink: 'https://easybeatz.com',
         githubLink: 'https://github.com/foxbecoding/easybeatz',
