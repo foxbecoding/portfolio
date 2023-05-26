@@ -20,6 +20,8 @@ const iconPath = reactive({
     info: mdiInformationSlabCircleOutline
 })
 
+const isModalOpen = ref<boolean>(false)
+
 const modal = reactive({
     title: '',
     text: ''
@@ -58,9 +60,18 @@ const projects = ref<Project[]>([
     }
 ])
 
-const setModalData = (data: any): void => {
+const openModal = (data: any): void => {
+    isModalOpen.value = true
     modal.title = data.title
     modal.text = data.text
+    document.body.style.overflow = "hidden";
+}
+
+const closeModal = (): void => {
+    isModalOpen.value = false
+    modal.title = ''
+    modal.text = ''
+    document.body.style.overflow = "";
 }
 
 </script>
@@ -84,9 +95,9 @@ const setModalData = (data: any): void => {
                         <div class="flex">
                             <h2 class="card-title flex-1">{{ project.title }}</h2>
                             <label
-                                @click="setModalData(project.modal)" 
+                                @click="openModal(project.modal)" 
                                 class="flex-none btn btn-sm btn-ghost btn-circle text-info"
-                                for="my-modal" 
+                                 
                             >
                                 <svg-icon type="mdi" :path="iconPath.info" :size="24" />
                             </label>
@@ -120,16 +131,18 @@ const setModalData = (data: any): void => {
                     </div>
                 </div>
             </div>
-        </AppFrame>  
-        <input type="checkbox" id="my-modal" class="modal-toggle" />
-        <div class="modal">
-            <div class="modal-box">
-                <h3 class="font-bold text-lg">{{ modal.title }}</h3>
-                <p class="py-4">{{ modal.text }}</p>
-                <div class="modal-action">
-                    <label for="my-modal" class="btn btn-sm bg-neutral">Close</label>
+        </AppFrame>
+        <teleport to="body">
+            <!-- <input type="checkbox" id="my-modal" class="modal-toggle" /> -->
+            <div class="modal" :class="isModalOpen ? 'modal-open' : ''">
+                <div class="modal-box">
+                    <h3 class="font-bold text-lg">{{ modal.title }}</h3>
+                    <p class="py-4">{{ modal.text }}</p>
+                    <div class="modal-action">
+                        <label class="btn btn-sm bg-neutral" @click="closeModal()">Close</label>
+                    </div>
                 </div>
             </div>
-        </div>
+        </teleport>  
     </div>
 </template>
