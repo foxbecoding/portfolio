@@ -71,7 +71,7 @@ const closeModal = (): void => {
     isModalOpen.value = false
     modal.title = ''
     modal.text = ''
-    document.body.style.overflow = "";
+    document.body.style.removeProperty("overflow");
 }
 
 </script>
