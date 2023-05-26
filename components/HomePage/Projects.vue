@@ -64,7 +64,7 @@ const openModal = (data: any): void => {
     isModalOpen.value = true
     modal.title = data.title
     modal.text = data.text
-    document.body.style.overflow = "hidden";
+    document.body.style.setProperty('overflow', 'hidden');
 }
 
 const closeModal = (): void => {
@@ -133,7 +133,6 @@ const closeModal = (): void => {
             </div>
         </AppFrame>
         <teleport to="body">
-            <!-- <input type="checkbox" id="my-modal" class="modal-toggle" /> -->
             <div class="modal" :class="isModalOpen ? 'modal-open' : ''">
                 <div class="modal-box">
                     <h3 class="font-bold text-lg">{{ modal.title }}</h3>
