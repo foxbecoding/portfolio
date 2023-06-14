@@ -14,7 +14,7 @@ const iconPath = ref<string>(mdiXml)
             }"
         >
             <div class="max-w-lg">
-                <svg-icon class="mx-auto pb-8" type="mdi" :path="iconPath" :size="200" />
+                <svg-icon class="mx-auto" type="mdi" :path="iconPath" :size="200" />
                 <h1 class="text-3xl sm:text-5xl font-bold">Hi I'm Fox, and I am a <br> 
                     <span class="primary-highlight">Full Stack Developer</span>
                 </h1>
