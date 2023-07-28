@@ -16,7 +16,7 @@ const iconPath = ref<string>(mdiLinkedin)
                 </div>
             </div>
             <h2 class="text-3xl sm:text-4xl font-bold"> 
-                <span class="primary-highlight">@foxbecoding</span>
+                <a class="primary-highlight" href="https://www.linkedin.com/in/foxbecoding/">@foxbecoding</a>
             </h2>  
         </div>
     </div>
